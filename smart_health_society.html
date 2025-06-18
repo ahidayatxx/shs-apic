@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografis Smart Health Society Indonesia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: auto;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #4a5568;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .diagram-container {
+            position: relative;
+            width: 100%;
+            height: 800px;
+            margin: 40px 0;
+            overflow: visible;
+        }
+
+        .center-node {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .center-node:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .center-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .center-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .dimension-node {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            padding: 20px;
+        }
+
+        .dimension-node:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .dimension-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .dimension-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Positioning for 6 dimensions in a circle */
+        .dim-1 { 
+            top: 2%; 
+            left: 50%; 
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        }
+        
+        .dim-2 { 
+            top: 15%; 
+            right: 1%;
+            background: linear-gradient(135deg, #4ecdc4, #44bd87);
+        }
+        
+        .dim-3 { 
+            bottom: 15%; 
+            right: 1%;
+            background: linear-gradient(135deg, #45b7d1, #2980b9);
+        }
+        
+        .dim-4 { 
+            bottom: 2%; 
+            left: 50%; 
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #f9ca24, #f0932b);
+        }
+        
+        .dim-5 { 
+            bottom: 15%; 
+            left: 1%;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+        }
+        
+        .dim-6 { 
+            top: 15%; 
+            left: 1%;
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+        }
+
+        .connection-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.6), transparent);
+            transform-origin: left center;
+            animation: pulse 2s infinite;
+            z-index: 1;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        .implementation-framework {
+            margin-top: 50px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .framework-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #2d3748;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .phases {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .phase {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .phase:hover {
+            transform: translateY(-5px);
+        }
+
+        .phase-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        .phase-title {
+            font-size: 1.3rem;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .phase-description {
+            color: #4a5568;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .working-groups {
+            margin-top: 50px;
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .working-groups-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #2d3748;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .groups-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .working-group {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid;
+        }
+
+        .working-group:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .wg-policy { border-left-color: #ff6b6b; }
+        .wg-service { border-left-color: #4ecdc4; }
+        .wg-security { border-left-color: #45b7d1; }
+        .wg-technology { border-left-color: #f9ca24; }
+        .wg-ecosystem { border-left-color: #fd79a8; }
+
+        .group-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .group-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .wg-policy .group-icon { background: linear-gradient(135deg, #ff6b6b, #ee5a24); }
+        .wg-service .group-icon { background: linear-gradient(135deg, #4ecdc4, #44bd87); }
+        .wg-security .group-icon { background: linear-gradient(135deg, #45b7d1, #2980b9); }
+        .wg-technology .group-icon { background: linear-gradient(135deg, #f9ca24, #f0932b); }
+        .wg-ecosystem .group-icon { background: linear-gradient(135deg, #fd79a8, #e84393); }
+
+        .group-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2d3748;
+            line-height: 1.3;
+        }
+
+        .group-leader {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        .group-dimensions {
+            margin-bottom: 15px;
+        }
+
+        .dimension-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #5a67d8;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin: 2px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .primary-dimension {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            font-weight: bold;
+        }
+
+        .group-description {
+            color: #4a5568;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            max-width: 300px;
+            display: none;
+            z-index: 100;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .main-title { font-size: 2rem; }
+            .subtitle { font-size: 1rem; }
+            .diagram-container { height: 600px; }
+            .center-node { width: 200px; height: 200px; }
+            .center-title { font-size: 1.4rem; }
+            .dimension-node { width: 160px; height: 160px; }
+            .dimension-title { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="main-title">Smart Health Society Indonesia</h1>
+            <p class="subtitle">
+                Transformasi kesehatan digital berorientasi sosial dan teknis menyeluruh yang mengintegrasikan teknologi digital berbasis bukti 
+                untuk mencapai keluaran, hasil dan dampak kesehatan yang adil, aman, efektif, dan berkelanjutan
+            </p>
+        </div>
+
+        <div class="diagram-container" id="diagram">
+            <!-- Center Node -->
+            <div class="center-node" id="centerNode">
+                <div class="center-title">Smart Health Society</div>
+                <div class="center-subtitle">(SHS-APIC)</div>
+            </div>
+
+            <!-- Dimension Nodes -->
+            <div class="dimension-node dim-1" data-tooltip="Integrasi platform SATUSEHAT, standar FHIR HL7, sistem pendukung keputusan klinis berbasis AI, dan monitoring jarak jauh IoT untuk interoperabilitas teknis dan organisasi di seluruh fasilitas kesehatan.">
+                <div class="dimension-icon">🔗</div>
+                <div class="dimension-title">Integrasi Berorientasi Sosial dan Teknis & Interoperabilitas</div>
+            </div>
+
+            <div class="dimension-node dim-2" data-tooltip="Proses co-design dengan pasien dan tenaga kesehatan, antarmuka multibahasa, program literasi digital, dan desain aksesibel yang mempertimbangkan keberagaman budaya dan bahasa lokal.">
+                <div class="dimension-icon">👥</div>
+                <div class="dimension-title">Desain Berpusat Manusia & Kesetaraan Digital</div>
+            </div>
+
+            <div class="dimension-node dim-3" data-tooltip="Penilaian kesiapan organisasi, program pengembangan kepemimpinan, pelatihan staf komprehensif, dan strategi manajemen perubahan yang disesuaikan dengan institusi kesehatan dari rumah sakit tersier hingga Puskesmas.">
+                <div class="dimension-icon">🏢</div>
+                <div class="dimension-title">Kesiapan Organisasi & Manajemen Perubahan</div>
+            </div>
+
+            <div class="dimension-node dim-4" data-tooltip="Health Technology Assessment, pemantauan keselamatan pasien, analisis cost-effectiveness, dan kepatuhan terhadap regulasi perlindungan data dan standar keamanan informasi kesehatan.">
+                <div class="dimension-icon">📊</div>
+                <div class="dimension-title">Evaluasi Berbasis Bukti & Jaminan Keamanan</div>
+            </div>
+
+            <div class="dimension-node dim-5" data-tooltip="Penilaian dampak kesetaraan kesehatan, intervensi terarah untuk populasi rentan, strategi keterlibatan komunitas untuk masyarakat adat dan pedesaan, serta integrasi determinan sosial kesehatan.">
+                <div class="dimension-icon">⚖️</div>
+                <div class="dimension-title">Integrasi Kesetaraan Kesehatan & Keadilan Sosial</div>
+            </div>
+
+            <div class="dimension-node dim-6" data-tooltip="Kemitraan penelitian dan pengembangan antar universitas dan industri, platform open-source, inkubator kesehatan digital, dan jaringan berbagi pengetahuan untuk inovasi berkelanjutan.">
+                <div class="dimension-icon">🌱</div>
+                <div class="dimension-title">Pengembangan Ekosistem Inovasi Berkelanjutan</div>
+            </div>
+        </div>
+
+        <div class="working-groups">
+            <h2 class="working-groups-title">Kelompok Kerja SHS-APIC</h2>
+            <p style="text-align: center; color: #4a5568; margin-bottom: 20px; line-height: 1.6;">
+                Lima kelompok kerja yang saling berkolaborasi untuk mewujudkan transformasi kesehatan berorientasi sosial dan teknis
+            </p>
+            
+            <div class="groups-container">
+                <div class="working-group wg-policy">
+                    <div class="group-header">
+                        <div class="group-icon">🏛️</div>
+                        <div class="group-title">Smart Health Policy & Governance</div>
+                    </div>
+                    <div class="group-dimensions">
+                        <span class="dimension-badge primary-dimension">Kesiapan Organisasi & Manajemen Perubahan</span>
+                        <span class="dimension-badge primary-dimension">Integrasi Kesetaraan Kesehatan</span>
+                        <span class="dimension-badge">Evaluasi Berbasis Bukti (Kebijakan)</span>
+                    </div>
+                    <div class="group-description">
+                        Mengembangkan framework penilaian kesiapan organisasi, protokol manajemen perubahan sistematis, dan integrasi penilaian dampak kesetaraan dalam semua kebijakan kesehatan digital. Memimpin pengembangan kerangka regulasi untuk implementasi AI dan teknologi kesehatan yang etis.
+                    </div>
+                </div>
+
+                <div class="working-group wg-service">
+                    <div class="group-header">
+                        <div class="group-icon">🏥</div>
+                        <div class="group-title">Smart Health Service & Delivery</div>
+                    </div>
+                    <div class="group-dimensions">
+                        <span class="dimension-badge primary-dimension">Desain Berpusat Manusia & Kesetaraan Digital</span>
+                        <span class="dimension-badge primary-dimension">Kesetaraan Kesehatan & Keadilan Sosial</span>
+                        <span class="dimension-badge">Kesiapan Organisasi (Level Layanan)</span>
+                    </div>
+                    <div class="group-description">
+                        Memimpin proses co-design dengan pasien dan tenaga kesehatan, mengembangkan antarmuka multibahasa, program literasi digital, dan model pelayanan yang responsif budaya. Fokus pada intervensi terarah untuk populasi rentan dan keterlibatan komunitas yang bermakna.
+                    </div>
+                </div>
+
+                <div class="working-group wg-security">
+                    <div class="group-header">
+                        <div class="group-icon">🔒</div>
+                        <div class="group-title">Smart Health Security & Privacy</div>
+                    </div>
+                    <div class="group-dimensions">
+                        <span class="dimension-badge primary-dimension">Desain Berpusat Manusia (Privasi & Etika)</span>
+                        <span class="dimension-badge">Integrasi Berorientasi Sosial dan Teknis (Keamanan)</span>
+                        <span class="dimension-badge">Evaluasi Berbasis Bukti (Keamanan)</span>
+                    </div>
+                    <div class="group-description">
+                        Mengembangkan framework tata kelola data komprehensif, protokol deteksi bias untuk AI, arsitektur keamanan sosio-teknis, dan pertimbangan privasi yang disesuaikan dengan konteks budaya. Memastikan kepatuhan regulasi perlindungan data pribadi.
+                    </div>
+                </div>
+
+                <div class="working-group wg-technology">
+                    <div class="group-header">
+                        <div class="group-icon">⚙️</div>
+                        <div class="group-title">Smart Health Technology & Sustainability</div>
+                    </div>
+                    <div class="group-dimensions">
+                        <span class="dimension-badge primary-dimension">Integrasi Berorientasi Sosial dan Teknis & Interoperabilitas</span>
+                        <span class="dimension-badge">Inovasi Berkelanjutan (Keberlanjutan Teknis)</span>
+                        <span class="dimension-badge">Evaluasi Berbasis Bukti (Teknologi)</span>
+                    </div>
+                    <div class="group-description">
+                        Memimpin implementasi standar FHIR HL7, integrasi SATUSEHAT dengan pendekatan komprehensif, pengembangan solusi teknologi berkelanjutan, dan model keberlanjutan finansial untuk pemeliharaan teknologi dalam pengaturan dengan sumber daya terbatas.
+                    </div>
+                </div>
+
+                <div class="working-group wg-ecosystem">
+                    <div class="group-header">
+                        <div class="group-icon">🌐</div>
+                        <div class="group-title">Smart Health Ecosystem & Innovation</div>
+                    </div>
+                    <div class="group-dimensions">
+                        <span class="dimension-badge primary-dimension">Pengembangan Ekosistem Inovasi Berkelanjutan</span>
+                        <span class="dimension-badge">Integrasi Berorientasi Sosial dan Teknis (Sistem Inovasi)</span>
+                        <span class="dimension-badge">Evaluasi Berbasis Bukti (Inovasi)</span>
+                    </div>
+                    <div class="group-description">
+                        Mengembangkan Living Labs untuk validasi inovasi sosio-teknis, memfasilitasi inovasi multi-stakeholder, membangun model keberlanjutan ekosistem inovasi, dan platform open-source untuk solusi kesehatan yang digerakkan komunitas.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="implementation-framework">
+            <h2 class="framework-title">Framework Implementasi</h2>
+            <div class="phases">
+                <div class="phase">
+                    <div class="phase-number">1</div>
+                    <h3 class="phase-title">Persiapan</h3>
+                    <p class="phase-description">
+                        Keterlibatan stakeholder, penilaian kebutuhan, evaluasi kesiapan organisasi, 
+                        dan perencanaan implementasi dengan mempertimbangkan hambatan dan fasilitator 
+                        dalam konteks transformasi kesehatan berorientasi sosial dan teknis.
+                    </p>
+                </div>
+                <div class="phase">
+                    <div class="phase-number">2</div>
+                    <h3 class="phase-title">Implementasi</h3>
+                    <p class="phase-description">
+                        Strategi rollout bertahap dengan monitoring berkelanjutan, loop umpan balik 
+                        real-time, program pelatihan staf, dan bantuan teknis yang disesuaikan 
+                        dengan kondisi infrastruktur dan kebutuhan transformasi.
+                    </p>
+                </div>
+                <div class="phase">
+                    <div class="phase-number">3</div>
+                    <h3 class="phase-title">Keberlanjutan</h3>
+                    <p class="phase-description">
+                        Evaluasi jangka panjang, perencanaan keberlanjutan finansial, perbaikan 
+                        kualitas berkelanjutan, dan berbagi pengetahuan untuk scale-up intervensi 
+                        sukses dengan pendekatan sistematis dan berkelanjutan.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="context-banner">
+            <h2 class="context-title">Smart Health Society (SHS-APIC)</h2>
+            <p style="color: #2d3748; font-size: 1.1rem; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+                Organisasi yang mempromosikan dan memfasilitasi pendekatan transformasi kesehatan digital berorientasi sosial dan teknis yang komprehensif, 
+                mengintegrasikan teknologi digital berbasis bukti dengan faktor organisasi, sosial, dan manusia untuk mencapai keluaran, hasil dan dampak kesehatan 
+                yang adil, aman, efektif, dan berkelanjutan.
+            </p>
+        </div>
+
+        <div class="tooltip" id="tooltip"></div>
+    </div>
+
+    <script>
+        // Connection lines animation
+        function createConnectionLines() {
+            const diagram = document.getElementById('diagram');
+            const centerNode = document.getElementById('centerNode');
+            const dimensionNodes = document.querySelectorAll('.dimension-node');
+            
+            dimensionNodes.forEach((node, index) => {
+                const line = document.createElement('div');
+                line.className = 'connection-line';
+                
+                // Calculate position and angle
+                const centerRect = centerNode.getBoundingClientRect();
+                const nodeRect = node.getBoundingClientRect();
+                const diagramRect = diagram.getBoundingClientRect();
+                
+                const centerX = centerRect.left + centerRect.width / 2 - diagramRect.left;
+                const centerY = centerRect.top + centerRect.height / 2 - diagramRect.top;
+                const nodeX = nodeRect.left + nodeRect.width / 2 - diagramRect.left;
+                const nodeY = nodeRect.top + nodeRect.height / 2 - diagramRect.top;
+                
+                const length = Math.sqrt(Math.pow(nodeX - centerX, 2) + Math.pow(nodeY - centerY, 2)) - 140;
+                const angle = Math.atan2(nodeY - centerY, nodeX - centerX) * 180 / Math.PI;
+                
+                line.style.width = length + 'px';
+                line.style.left = (centerX + 140 * Math.cos(angle * Math.PI / 180)) + 'px';
+                line.style.top = (centerY + 140 * Math.sin(angle * Math.PI / 180)) + 'px';
+                line.style.transform = `rotate(${angle}deg)`;
+                line.style.animationDelay = (index * 0.3) + 's';
+                
+                diagram.appendChild(line);
+            });
+        }
+
+        // Tooltip functionality
+        function initTooltips() {
+            const nodes = document.querySelectorAll('[data-tooltip]');
+            const tooltip = document.getElementById('tooltip');
+            
+            nodes.forEach(node => {
+                node.addEventListener('mouseenter', (e) => {
+                    const text = e.target.getAttribute('data-tooltip');
+                    tooltip.textContent = text;
+                    tooltip.style.display = 'block';
+                });
+                
+                node.addEventListener('mousemove', (e) => {
+                    tooltip.style.left = (e.pageX + 10) + 'px';
+                    tooltip.style.top = (e.pageY - 10) + 'px';
+                });
+                
+                node.addEventListener('mouseleave', () => {
+                    tooltip.style.display = 'none';
+                });
+            });
+        }
+
+        // Center node interaction
+        function initCenterNodeInteraction() {
+            const centerNode = document.getElementById('centerNode');
+            const dimensionNodes = document.querySelectorAll('.dimension-node');
+            
+            centerNode.addEventListener('click', () => {
+                dimensionNodes.forEach((node, index) => {
+                    setTimeout(() => {
+                        node.style.transform = node.style.transform + ' scale(1.1)';
+                        setTimeout(() => {
+                            node.style.transform = node.style.transform.replace(' scale(1.1)', '');
+                        }, 200);
+                    }, index * 100);
+                });
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                createConnectionLines();
+                initTooltips();
+                initCenterNodeInteraction();
+            }, 100);
+        });
+
+        // Recreate connection lines on window resize
+        window.addEventListener('resize', () => {
+            const existingLines = document.querySelectorAll('.connection-line');
+            existingLines.forEach(line => line.remove());
+            setTimeout(createConnectionLines, 100);
+        });
+    </script>
+</body>
+</html>
