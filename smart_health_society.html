@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografis Smart Health Society Indonesia</title>
+    <title>Kerangka Strategis SHS-APIC</title>
     <style>
         * {
             margin: 0;
@@ -45,7 +45,7 @@
         .subtitle {
             font-size: 1.2rem;
             color: #4a5568;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             line-height: 1.6;
         }
@@ -263,7 +263,7 @@
 
         .groups-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 25px;
             margin-top: 30px;
         }
@@ -319,14 +319,6 @@
             line-height: 1.3;
         }
 
-        .group-leader {
-            font-size: 0.9rem;
-            color: #666;
-            font-style: italic;
-            margin-bottom: 15px;
-            display: none;
-        }
-
         .group-dimensions {
             margin-bottom: 15px;
         }
@@ -347,10 +339,39 @@
             font-weight: bold;
         }
 
+        .stakeholder-integration {
+            margin: 15px 0;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .stakeholder-integration strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #2d3748;
+        }
+
         .group-description {
             color: #4a5568;
             line-height: 1.5;
             font-size: 0.9rem;
+        }
+
+        .context-banner {
+            margin-top: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f1f3f4, #e8eaf6);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .context-title {
+            font-size: 2rem;
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-weight: bold;
         }
 
         .tooltip {
@@ -374,24 +395,29 @@
             .center-title { font-size: 1.4rem; }
             .dimension-node { width: 160px; height: 160px; }
             .dimension-title { font-size: 0.9rem; }
+            .groups-container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1 class="main-title">Smart Health Society Indonesia</h1>
-            <p class="subtitle">
-                Transformasi kesehatan digital berorientasi sosial dan teknis menyeluruh yang mengintegrasikan teknologi digital berbasis bukti 
-                untuk mencapai keluaran, hasil dan dampak kesehatan yang adil, aman, efektif, dan berkelanjutan
-            </p>
+            <h1 class="main-title">Kerangka Kerja SHS-APIC</h1>
+            <div style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 25px; border-radius: 15px; margin: 20px 0; text-align: left;">
+                <p style="color: #2d3748; font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px;">
+                    <strong>Kerangka Kerja Strategis:</strong> Framework untuk perencanaan, tata kelola, evaluasi dan keberlanjutan transformasi kesehatan digital berorientasi sosial dan teknis yang mengintegrasikan teknologi digital berbasis bukti dengan faktor organisasi, sosial, dan manusia untuk mencapai keluaran, hasil dan dampak kesehatan yang adil, aman, efektif, dan berkelanjutan.
+                </p>
+                <p style="color: #2d3748; font-size: 1.1rem; line-height: 1.6;">
+                    <strong>Kerangka Kerja Operasional:</strong> Panduan implementasi teknis yang mengintegrasikan ekosistem Smart Health (pasien, tenaga kesehatan, fasilitas kesehatan, penyedia teknologi, pemerintah/regulator, asuransi, data center, infrastruktur digital) melalui working groups SHS-APIC dengan pendekatan sistem layanan kesehatan yang terhubung, responsif, berbasis data, dan berorientasi pasien untuk mendukung pengambilan keputusan klinis, monitoring kesehatan, serta koordinasi layanan secara real-time.
+                </p>
+            </div>
         </div>
 
         <div class="diagram-container" id="diagram">
             <!-- Center Node -->
             <div class="center-node" id="centerNode">
-                <div class="center-title">Smart Health Society</div>
-                <div class="center-subtitle">(SHS-APIC)</div>
+                <div class="center-title" style="font-size: 1.4rem;">Kerangka Kerja Strategis</div>
+                <div class="center-subtitle">SHS-APIC</div>
             </div>
 
             <!-- Dimension Nodes -->
@@ -429,7 +455,7 @@
         <div class="working-groups">
             <h2 class="working-groups-title">Kelompok Kerja SHS-APIC</h2>
             <p style="text-align: center; color: #4a5568; margin-bottom: 20px; line-height: 1.6;">
-                Lima kelompok kerja yang saling berkolaborasi untuk mewujudkan transformasi kesehatan berorientasi sosial dan teknis
+                Lima kelompok kerja yang mengintegrasikan Kerangka Operasional SHS-APIC untuk implementasi teknis transformasi kesehatan berorientasi sosial dan teknis
             </p>
             
             <div class="groups-container">
@@ -442,6 +468,10 @@
                         <span class="dimension-badge primary-dimension">Kesiapan Organisasi & Manajemen Perubahan</span>
                         <span class="dimension-badge primary-dimension">Integrasi Kesetaraan Kesehatan</span>
                         <span class="dimension-badge">Evaluasi Berbasis Bukti (Kebijakan)</span>
+                    </div>
+                    <div class="stakeholder-integration" style="background: rgba(255, 107, 107, 0.1);">
+                        <strong>Integrasi Kerangka Operasional:</strong>
+                        <span style="color: #d63031;">🏛️ Pemerintah & Regulator:</span> Kebijakan, regulasi, standar digitalisasi (SATUSEHAT, e-Kohort, SPGDT)
                     </div>
                     <div class="group-description">
                         Mengembangkan framework penilaian kesiapan organisasi, protokol manajemen perubahan sistematis, dan integrasi penilaian dampak kesetaraan dalam semua kebijakan kesehatan digital. Memimpin pengembangan kerangka regulasi untuk implementasi AI dan teknologi kesehatan yang etis.
@@ -458,6 +488,12 @@
                         <span class="dimension-badge primary-dimension">Kesetaraan Kesehatan & Keadilan Sosial</span>
                         <span class="dimension-badge">Kesiapan Organisasi (Level Layanan)</span>
                     </div>
+                    <div class="stakeholder-integration" style="background: rgba(78, 205, 196, 0.1);">
+                        <strong>Integrasi Kerangka Operasional:</strong>
+                        <span style="color: #00b894;">🏥 Fasilitas Kesehatan:</span> RS, Puskesmas, Klinik Digital (SIMRS, e-medical record, telemedicine)<br>
+                        <span style="color: #00b894;">👨‍⚕️ Tenaga Kesehatan:</span> Dokter, perawat, apoteker dalam ekosistem digital<br>
+                        <span style="color: #00b894;">👥 Pasien & Masyarakat:</span> Pengguna aplikasi kesehatan, wearable devices, telekonsultasi
+                    </div>
                     <div class="group-description">
                         Memimpin proses co-design dengan pasien dan tenaga kesehatan, mengembangkan antarmuka multibahasa, program literasi digital, dan model pelayanan yang responsif budaya. Fokus pada intervensi terarah untuk populasi rentan dan keterlibatan komunitas yang bermakna.
                     </div>
@@ -472,6 +508,11 @@
                         <span class="dimension-badge primary-dimension">Desain Berpusat Manusia (Privasi & Etika)</span>
                         <span class="dimension-badge">Integrasi Berorientasi Sosial dan Teknis (Keamanan)</span>
                         <span class="dimension-badge">Evaluasi Berbasis Bukti (Keamanan)</span>
+                    </div>
+                    <div class="stakeholder-integration" style="background: rgba(69, 183, 209, 0.1);">
+                        <strong>Integrasi Kerangka Operasional:</strong>
+                        <span style="color: #0984e3;">☁️ Data Center & Cloud:</span> Penyimpanan aman, keamanan data<br>
+                        <span style="color: #0984e3;">🔐 Infrastruktur Digital:</span> Internet, 5G, protokol keamanan data
                     </div>
                     <div class="group-description">
                         Mengembangkan framework tata kelola data komprehensif, protokol deteksi bias untuk AI, arsitektur keamanan sosio-teknis, dan pertimbangan privasi yang disesuaikan dengan konteks budaya. Memastikan kepatuhan regulasi perlindungan data pribadi.
@@ -488,6 +529,11 @@
                         <span class="dimension-badge">Inovasi Berkelanjutan (Keberlanjutan Teknis)</span>
                         <span class="dimension-badge">Evaluasi Berbasis Bukti (Teknologi)</span>
                     </div>
+                    <div class="stakeholder-integration" style="background: rgba(249, 202, 36, 0.1);">
+                        <strong>Integrasi Kerangka Operasional:</strong>
+                        <span style="color: #fdcb6e;">🔧 Penyedia Teknologi:</span> Aplikasi kesehatan, AI, IoT, sistem interoperabilitas<br>
+                        <span style="color: #fdcb6e;">🌐 Infrastruktur Digital:</span> Platform terintegrasi, standar FHIR HL7, SATUSEHAT
+                    </div>
                     <div class="group-description">
                         Memimpin implementasi standar FHIR HL7, integrasi SATUSEHAT dengan pendekatan komprehensif, pengembangan solusi teknologi berkelanjutan, dan model keberlanjutan finansial untuk pemeliharaan teknologi dalam pengaturan dengan sumber daya terbatas.
                     </div>
@@ -503,6 +549,12 @@
                         <span class="dimension-badge">Integrasi Berorientasi Sosial dan Teknis (Sistem Inovasi)</span>
                         <span class="dimension-badge">Evaluasi Berbasis Bukti (Inovasi)</span>
                     </div>
+                    <div class="stakeholder-integration" style="background: rgba(253, 121, 168, 0.1);">
+                        <strong>Integrasi Kerangka Operasional:</strong>
+                        <span style="color: #e84393;">🤝 Kolaborasi Stakeholder:</span> Kemitraan publik-swasta, startup kesehatan digital<br>
+                        <span style="color: #e84393;">💳 Pembayar/Asuransi:</span> BPJS, asuransi swasta, integrasi pembayaran digital<br>
+                        <span style="color: #e84393;">🔬 Penyedia Teknologi (R&D):</span> Inovasi AI, blockchain, platform open-source
+                    </div>
                     <div class="group-description">
                         Mengembangkan Living Labs untuk validasi inovasi sosio-teknis, memfasilitasi inovasi multi-stakeholder, membangun model keberlanjutan ekosistem inovasi, dan platform open-source untuk solusi kesehatan yang digerakkan komunitas.
                     </div>
@@ -511,45 +563,33 @@
         </div>
 
         <div class="implementation-framework">
-            <h2 class="framework-title">Framework Implementasi</h2>
+            <h2 class="framework-title">Kerangka Kerja Strategis & Operasional SHS-APIC</h2>
             <div class="phases">
                 <div class="phase">
                     <div class="phase-number">1</div>
-                    <h3 class="phase-title">Persiapan</h3>
+                    <h3 class="phase-title">Persiapan Strategis</h3>
                     <p class="phase-description">
-                        Keterlibatan stakeholder, penilaian kebutuhan, evaluasi kesiapan organisasi, 
-                        dan perencanaan implementasi dengan mempertimbangkan hambatan dan fasilitator 
-                        dalam konteks transformasi kesehatan berorientasi sosial dan teknis.
+                        <strong>Kerangka Strategis:</strong> Keterlibatan stakeholder, penilaian kebutuhan, evaluasi kesiapan organisasi.<br><br>
+                        <strong>Kerangka Operasional:</strong> Mapping ekosistem Smart Health, assessment infrastruktur digital, persiapan platform SATUSEHAT dan interoperabilitas sistem.
                     </p>
                 </div>
                 <div class="phase">
                     <div class="phase-number">2</div>
-                    <h3 class="phase-title">Implementasi</h3>
+                    <h3 class="phase-title">Implementasi Terintegrasi</h3>
                     <p class="phase-description">
-                        Strategi rollout bertahap dengan monitoring berkelanjutan, loop umpan balik 
-                        real-time, program pelatihan staf, dan bantuan teknis yang disesuaikan 
-                        dengan kondisi infrastruktur dan kebutuhan transformasi.
+                        <strong>Kerangka Strategis:</strong> Strategi rollout bertahap dengan monitoring berkelanjutan, loop umpan balik real-time.<br><br>
+                        <strong>Kerangka Operasional:</strong> Deployment telemedicine, mobile health apps, wearables, SIMRS, AI radiologi sesuai working groups.
                     </p>
                 </div>
                 <div class="phase">
                     <div class="phase-number">3</div>
-                    <h3 class="phase-title">Keberlanjutan</h3>
+                    <h3 class="phase-title">Keberlanjutan Ekosistem</h3>
                     <p class="phase-description">
-                        Evaluasi jangka panjang, perencanaan keberlanjutan finansial, perbaikan 
-                        kualitas berkelanjutan, dan berbagi pengetahuan untuk scale-up intervensi 
-                        sukses dengan pendekatan sistematis dan berkelanjutan.
+                        <strong>Kerangka Strategis:</strong> Evaluasi jangka panjang, perencanaan keberlanjutan finansial, perbaikan kualitas berkelanjutan.<br><br>
+                        <strong>Kerangka Operasional:</strong> Optimalisasi big data analytics, scale-up inovasi sukses, penguatan kemitraan publik-swasta.
                     </p>
                 </div>
             </div>
-        </div>
-
-        <div class="context-banner">
-            <h2 class="context-title">Smart Health Society (SHS-APIC)</h2>
-            <p style="color: #2d3748; font-size: 1.1rem; line-height: 1.6; max-width: 800px; margin: 0 auto;">
-                Organisasi yang mempromosikan dan memfasilitasi pendekatan transformasi kesehatan digital berorientasi sosial dan teknis yang komprehensif, 
-                mengintegrasikan teknologi digital berbasis bukti dengan faktor organisasi, sosial, dan manusia untuk mencapai keluaran, hasil dan dampak kesehatan 
-                yang adil, aman, efektif, dan berkelanjutan.
-            </p>
         </div>
 
         <div class="tooltip" id="tooltip"></div>
